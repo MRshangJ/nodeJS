@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
+    "art-template": "^4.12.2",
     "body-parser": "^1.18.3",
     "captchapng": "^0.0.1",
     "express": "^4.16.3",

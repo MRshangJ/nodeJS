@@ -76,16 +76,16 @@
                                   </ol>
                             </div>
                             <div class="panel-heading">
-                                    <form class="form-inline">
+                                    <form class="form-inline" method="POST" action="/findstu">
                                             <div class="form-group">
                                               <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
                                               <div class="input-group">
                                                 <div class="input-group-addon">学生姓名</div>
-                                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入想要查询的学生姓名">
+                                                <input type="text" name="name" class="form-control" id="exampleInputAmount" placeholder="请输入想要查询的学生姓名">
                                               </div>
                                             </div>
                                             <button type="submit" class="btn btn-success">查找</button>
-                                            <button type="submit" class="btn btn-success">新增</button>
+                                            <a href="/addstu" class="btn btn-success">新增</a>
                                           </form> 
                                 </div>
                             <div class="panel-body">
@@ -99,6 +99,21 @@
                                                   <th>操作</th>
                                               </tr>
                                           </thead>
+                                          <tbody>
+                                                {{if docs}}
+                                          {{each docs}}
+                                          
+                                            <tr>
+                                                <td>{{$value.name}}</td>
+                                                <td>{{$value.age}}</td>
+                                                <td>{{$value.sex}}</td> 
+                                                <td>{{$value.phone}}</td>
+                                                <td>{{$value.aintroduction}}</td>
+                                            </tr>
+                                      
+                                          {{/each}}
+                                          {{/if}}
+                                    </tbody>
                                           </table>
                             </div>
                           </div>

@@ -45,7 +45,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <p class="navbar-text navbar-right">欢迎【欧尼酱】进入
-                                <a href="#" class="navbar-link logouta">登出</a>
+                                <a href="/logout" class="navbar-link logouta">登出</a>
                             </p>
                         </div>
                         <!-- /.navbar-collapse -->
@@ -112,3 +112,11 @@
 <script src="../lib/js/jquery-1.12.4.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../lib/js/bootstrap.min.js"></script>
+<script>
+      $.ajax({
+      url:'/userinfo',
+      success:function(backData){
+         $(".navbar-text.navbar-right").text(`欢迎【${backData}】进入`)
+      }
+    })
+</script>
